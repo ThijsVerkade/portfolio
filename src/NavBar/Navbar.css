@@ -1,0 +1,57 @@
+.navbar {
+    position: sticky;
+    top: 0;
+    max-width: 100%;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000; /* Ensure the navbar is above other elements */
+}
+
+.navbar__title {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.navbar__list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    flex-grow: 1;
+}
+
+.navbar__item {
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+.navbar__item:hover {
+    background-color: #575757;
+}
+
+.navbar__link {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+}
+
+.navbar__icons {
+    display: flex;
+    align-items: center;
+}
+
+.navbar__icons i {
+    color: white;
+    font-size: 20px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.navbar__icons i:hover {
+    color: #575757;
+}
