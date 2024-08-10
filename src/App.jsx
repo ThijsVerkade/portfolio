@@ -4,6 +4,7 @@ import Home from "./pages/Home/Home.tsx";
 import Projects from "./pages/Projects/Projects.tsx";
 import example from './assets/example.png';
 import Technologies from "./pages/Technologies/Technologies.tsx";
+import AboutMe from "./pages/AboutMe/AboutMe.tsx";
 
 const projects = [
   { title: 'PROJECT 1', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', picture: example},
@@ -34,7 +35,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <Technologies technologies={technologies} additionalSkills={additionalSkills} />
+      <AboutMe />
     </>
   )
 }
