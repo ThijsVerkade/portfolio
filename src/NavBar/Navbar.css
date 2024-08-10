@@ -13,6 +13,7 @@
 .navbar__title {
     font-size: 30px;
     font-weight: 600;
+    cursor: pointer;
 }
 
 .navbar__list {
@@ -29,8 +30,8 @@
     margin: 0 10px;
 }
 
-.navbar__item:hover {
-    background-color: #575757;
+.navbar__item a:hover {
+    color: #575757;
 }
 
 .navbar__link {
