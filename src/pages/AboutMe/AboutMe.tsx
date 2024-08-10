@@ -1,5 +1,6 @@
 import {FC} from 'react';
 import './AboutMe.css';
+import { Helmet } from 'react-helmet';
 
 interface AboutMeEvent {
     year: string;
@@ -15,26 +16,51 @@ const aboutMeEvents: AboutMeEvent[] = [
 
 const AboutMe: FC = () => {
     return (
-        <div className="about-me">
-            <h1 className="about-me__title">About me</h1>
-            <div className="about-me__container">
-                {aboutMeEvents.map((event, index) => {
-                    const isFirst = index === 0;
-                    const isLast = index === aboutMeEvents.length - 1;
+        <>
+            <Helmet>
+                <title>About Me - Your Website Name</title>
+                <meta name="description" content="Learn more about me, my experiences and milestones over the years." />
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "Person",
+                        "name": "Your Name",
+                        "description": "Brief description about yourself.",
+                        "mainEntityOfPage": {
+                            "@type": "WebPage",
+                            "@id": "https://www.yourwebsite.com/about-me"
+                        },
+                        "event": aboutMeEvents.map(event => ({
+                            "@type": "Event",
+                            "startDate": event.year,
+                            "description": event.description
+                        }))
+                    })}
+                </script>
+            </Helmet>
+            <div className="about-me">
+                <header>
+                    <h1 className="about-me__title">About Me</h1>
+                </header>
+                <section className="about-me__container">
+                    {aboutMeEvents.map((event, index) => {
+                        const isFirst = index === 0;
+                        const isLast = index === aboutMeEvents.length - 1;
 
-                    return (
-                        <div className="about-me__event" key={index}>
-                            <h2 className="about-me__year">{event.year}</h2>
-                            <div className="about-me__circle"></div>
-                            <div className={`about-me__line ${isFirst ? 'about-me__line--first' : ''} ${isLast ? 'about-me__line--last' : ''}`}></div>
-                            <div className="about-me__content">
-                                <p className="about-me__description">{event.description}</p>
-                            </div>
-                        </div>
-                    );
-                })}
+                        return (
+                            <article className="about-me__event" key={index}>
+                                <h2 className="about-me__year">{event.year}</h2>
+                                <div className="about-me__circle"></div>
+                                <div className={`about-me__line ${isFirst ? 'about-me__line--first' : ''} ${isLast ? 'about-me__line--last' : ''}`}></div>
+                                <div className="about-me__content">
+                                    <p className="about-me__description">{event.description}</p>
+                                </div>
+                            </article>
+                        );
+                    })}
+                </section>
             </div>
-        </div>
+        </>
     );
 };
 

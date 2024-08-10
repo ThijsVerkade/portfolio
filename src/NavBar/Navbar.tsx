@@ -7,16 +7,16 @@ const Navbar: FC = () => {
             <div className="navbar__title">My Website</div>
             <ul className="navbar__list">
                 <li className="navbar__item">
-                    <a className="navbar__link" href="#home">Home</a>
+                    <a className="navbar__link" href="/">Home</a>
                 </li>
                 <li className="navbar__item">
-                    <a className="navbar__link" href="#projects">Projects</a>
+                    <a className="navbar__link" href="/projects">Projects</a>
                 </li>
                 <li className="navbar__item">
-                    <a className="navbar__link" href="#technologies">Technologies</a>
+                    <a className="navbar__link" href="/technologies">Technologies</a>
                 </li>
                 <li className="navbar__item">
-                    <a className="navbar__link" href="#about">About me</a>
+                    <a className="navbar__link" href="/about-me">About me</a>
                 </li>
             </ul>
             <div className="navbar__icons">
