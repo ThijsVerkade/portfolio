@@ -1,0 +1,36 @@
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.footer__contact-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__contact-item {
+    margin-bottom: 10px;
+}
+
+.footer__contact-title {
+    font-weight: bold;
+}
+
+.footer__contact-detail {
+    display: block;
+    margin-top: 5px;
+}
+
+.footer__social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.footer__social-icons a {
+    color: white;
+}

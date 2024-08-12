@@ -1,7 +1,8 @@
 import './App.css'
-import Navbar from "./NavBar/Navbar.tsx";
+import Navbar from "./componets/Navbar/Navbar.tsx";
 import {Outlet} from "react-router-dom";
 import {Helmet} from "react-helmet";
+import Footer from "./componets/Footer/Footer.tsx";
 
 function App() {
   return (
@@ -17,9 +18,7 @@ function App() {
     <main>
       <Outlet/>
     </main>
-    <footer>
-      <p>&copy; 2024 IT-Solutions by Thijs. All rights reserved.</p>
-    </footer>
+    <Footer/>
 </>
 )
 }
