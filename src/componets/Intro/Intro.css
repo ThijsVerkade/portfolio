@@ -1,0 +1,63 @@
+.intro {
+    color: #E5E9F0;
+    max-width: 600px;
+    padding: 0;
+    margin: 0;
+    border-radius: 8px;
+}
+
+.intro__text {
+    margin-bottom: 0;
+}
+
+.intro__name {
+    font-weight: 100;
+    font-size: 3rem;
+    margin: 0;
+}
+
+.intro__role {
+    font-size: 1.5rem;
+    color: #4D5BCE;
+    margin-top: 0;
+}
+
+.intro__code-snippet {
+    margin-top: 60px;
+}
+
+.intro__code-snippet p {
+    margin: 0;
+}
+
+.intro__comment {
+    color: #607B96;
+    font-size: 0.9rem;
+}
+
+.intro__comment-line {
+    text-align: right;
+    color: #1E2D3D;
+    padding-right: 20px;
+    border-right: 1px solid #1E2D3D;
+    display: inline-block;
+    width: 10px;
+    height: 20px;
+}
+
+.intro__code {
+    color: #FFFFFF;
+    font-size: 1rem;
+}
+
+.intro__keyword {
+    color: #4D5BCE;
+}
+
+.intro__variable {
+    color: #43D9AD;
+}
+
+.intro__string {
+    color: #E99287;
+}

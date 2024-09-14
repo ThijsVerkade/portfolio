@@ -1,39 +1,6 @@
 .home {
-    display: flex;
-    justify-content: center;
+    height: 90vh;
     align-items: center;
-    height: 100vh;
-}
-
-.home__header {
-    text-align: center;
-    color: #fff;
-}
-
-.home__title {
-    font-size: 48px;
-    font-weight: 700;
-    margin-bottom: 20px;
-}
-
-.home__description {
-    font-size: 18px;
-    font-weight: 400;
-    margin-bottom: 40px;
-}
-
-.home__button {
-    font-size: 16px;
-    font-weight: 600;
-    color: #fff;
-    background: linear-gradient(90deg, #945DD6 0%, #697BD1 67%, #13ADC7 100%);
-    border: none;
-    padding: 15px 30px;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.home__button:hover {
-    background: linear-gradient(90deg, #945DD6 0%, #697BD1 67%, #13ADC7 100%);
+    display: flex;
+    padding-left: 150px;
 }
