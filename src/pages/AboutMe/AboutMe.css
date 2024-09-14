@@ -1,68 +1,22 @@
 .about-me {
-    padding: 20px;
-    color: #fff;
-}
-
-.about-me__title {
-    font-size: 2em;
-    margin-bottom: 20px;
-}
-
-.about-me__container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    padding: 40px 0; /* Increased padding for the circle and line */
+
 }
 
-.about-me__event {
+.about-me__sidebar {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex: 1;
-    position: relative;
 }
 
-.about-me__year {
-    font-size: 1.2em;
-    margin-bottom: 10px;
+.vertical-toolbar {
+    height: 91.8vh;
+    border-right: 1px solid #1E2D3D;
 }
 
-.about-me__circle {
-    width: 20px;
-    height: 20px;
-    background-color: #fff;
-    border-radius: 50%;
-    position: relative;
-    z-index: 1;
+.about-me__info {
+    width: 251px;
+    border-right: 1px solid #1E2D3D;
 }
 
-.about-me__line {
-    position: absolute;
-    top: 63px;
-    height: 5px;
-    background-color: #fff;
-    width: 100%;
-}
-
-.about-me__line--first {
-    width: 50%;
-    right: 0;
-}
-
-.about-me__line--last {
-    width: 50%;
-    left: 0;
-}
-
-
-.about-me__content {
-    margin-top: 10px;
-    text-align: left;
-}
-
-.about-me__description {
-    font-size: 1em;
-    max-width: 200px;
+.info-sidebar__header {
+    border-top: 1px solid #1E2D3D;
 }

@@ -1,18 +1,86 @@
 import {FC} from 'react';
 import './AboutMe.css';
 import { Helmet } from 'react-helmet';
+import {
+    RiTerminalBoxFill,
+    RiUser4Fill,
+    RiGamepadFill,
+    RiPhoneFill,
+    RiMailFill
+} from '@remixicon/react';
+import InfoSidebar from "../../componets/InfoSidebar/InfoSidebar";
+import VerticalSidebar from "../../componets/VerticalSidebar/VerticalSidebar";
+import TabBar from "../../componets/TabBar/TabBar";
 
-interface AboutMeEvent {
-    year: string;
-    description: string;
-}
-
-const aboutMeEvents: AboutMeEvent[] = [
-    { year: '2018', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' },
-    { year: '2019', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' },
-    { year: '2020', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' },
-    { year: '2021', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' },
+const personalInfoMenuItems = [
+    {
+        title: 'bio',
+        colorDir: '#E99287',
+        subItems: ['Interests'],
+    },
+    {
+        title: 'interests',
+        colorDir: '#43D9AD',
+        subItems: ['High School', 'University'],
+    },
+    {
+        title: 'education',
+        colorDir: '#3A49A4',
+        subItems: ['user@gmail.com', '+3598246359'],
+    },
 ];
+
+
+const contactInfoMenuItems = [
+    {
+        title: 'user@gmail.com',
+        colorDir: '#607B96',
+        icon: <RiMailFill/>
+    },
+    {
+        title: '+316123123123',
+        colorDir: '#607B96',
+        icon: <RiPhoneFill/>
+    },
+];
+
+
+const toolbarItems = [
+    {
+        icon: RiTerminalBoxFill,
+        label: 'Terminal',
+        onClick: () => alert('Terminal clicked'),
+    },
+    {
+        icon: RiUser4Fill,
+        label: 'User Profile',
+        onClick: () => alert('User Profile clicked'),
+    },
+    {
+        icon: RiGamepadFill,
+        label: 'Games',
+        onClick: () => alert('Games clicked'),
+    },
+];
+
+const tabs = [
+    {
+        id: '1',
+        title: 'personal-info',
+        onClick: () => console.log('Clicked personal-info'),
+    },
+    {
+        id: '2',
+        title: 'projects',
+        onClick: () => console.log('Clicked projects'),
+    },
+    {
+        id: '3',
+        title: 'settings',
+        onClick: () => console.log('Clicked settings'),
+    },
+];
+
 
 const AboutMe: FC = () => {
     return (
@@ -20,45 +88,17 @@ const AboutMe: FC = () => {
             <Helmet>
                 <title>About Me - Your Website Name</title>
                 <meta name="description" content="Learn more about me, my experiences and milestones over the years." />
-                <script type="application/ld+json">
-                    {JSON.stringify({
-                        "@context": "https://schema.org",
-                        "@type": "Person",
-                        "name": "Your Name",
-                        "description": "Brief description about yourself.",
-                        "mainEntityOfPage": {
-                            "@type": "WebPage",
-                            "@id": "https://www.yourwebsite.com/about-me"
-                        },
-                        "event": aboutMeEvents.map(event => ({
-                            "@type": "Event",
-                            "startDate": event.year,
-                            "description": event.description
-                        }))
-                    })}
-                </script>
+
             </Helmet>
             <div className="about-me">
-                <header>
-                    <h1 className="about-me__title">About Me</h1>
-                </header>
-                <section className="about-me__container">
-                    {aboutMeEvents.map((event, index) => {
-                        const isFirst = index === 0;
-                        const isLast = index === aboutMeEvents.length - 1;
-
-                        return (
-                            <article className="about-me__event" key={index}>
-                                <h2 className="about-me__year">{event.year}</h2>
-                                <div className="about-me__circle"></div>
-                                <div className={`about-me__line ${isFirst ? 'about-me__line--first' : ''} ${isLast ? 'about-me__line--last' : ''}`}></div>
-                                <div className="about-me__content">
-                                    <p className="about-me__description">{event.description}</p>
-                                </div>
-                            </article>
-                        );
-                    })}
-                </section>
+                <div className="about-me__sidebar">
+                    <VerticalSidebar toolbarItems={toolbarItems}/>
+                    <div className="about-me__info">
+                        <InfoSidebar title="personal-info" menuItems={personalInfoMenuItems}/>
+                        <InfoSidebar title="contacts" menuItems={contactInfoMenuItems}/>
+                    </div>
+                </div>
+                <TabBar tabs={tabs}/>
             </div>
         </>
     );

@@ -2,6 +2,8 @@ import { FC } from 'react';
 import './Home.css';
 import { Helmet } from 'react-helmet';
 import Intro from "../../componets/Intro/Intro";
+// @ts-ignore
+import backgroundImage from '../../assets/background.svg';
 
 const Home: FC = () => {
     return (
@@ -12,6 +14,7 @@ const Home: FC = () => {
             </Helmet>
             <div className="home">
                 <Intro/>
+                <img className="home__background" src={backgroundImage} alt="background"/>
             </div>
         </>
     );

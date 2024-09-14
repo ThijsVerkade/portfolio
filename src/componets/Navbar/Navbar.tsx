@@ -10,10 +10,10 @@ const Navbar: FC = () => {
                     <a className="navbar__link" href="/">_hello</a>
                 </li>
                 <li className="navbar__item">
-                    <a className="navbar__link" href="/projects">_about-me</a>
+                    <a className="navbar__link" href="/about-me">_about-me</a>
                 </li>
                 <li className="navbar__item">
-                    <a className="navbar__link" href="/technologies">_projects</a>
+                    <a className="navbar__link" href="/projects">_projects</a>
                 </li>
             </ul>
             <div className="navbar__contact">
