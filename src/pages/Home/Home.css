@@ -3,4 +3,11 @@
     align-items: center;
     display: flex;
     padding-left: 316px;
+    position: relative
+}
+img {
+    display: block;
+}
+.intro {
+    position: absolute;
 }

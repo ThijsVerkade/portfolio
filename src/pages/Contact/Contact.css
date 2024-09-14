@@ -1,0 +1,17 @@
+.contact {
+    display: flex;
+}
+
+.contact__sidebar {
+    width: 388px;
+    height: 91.8vh;
+    border-right: 1px solid #1E2D3D;
+}
+
+.contact__content {
+    width: 100%;
+}
+
+.contact__content .contact-form {
+    margin: 10px 20px;
+}

@@ -17,7 +17,7 @@ const Navbar: FC = () => {
                 </li>
             </ul>
             <div className="navbar__contact">
-                <a className="navbar__link" href="/about-me">_contact-me</a>
+                <a className="navbar__link" href="/contact">_contact-me</a>
             </div>
         </nav>
     );

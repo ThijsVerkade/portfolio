@@ -14,6 +14,7 @@ interface MenuItem {
     colorDir: string;
     subItems?: string[];
     icon?: JSX.Element;
+    onButtonClick?: () => void;
 }
 
 interface SidebarMenuProps {
@@ -39,7 +40,7 @@ const InfoSidebar: FC<SidebarMenuProps> = ({ title, menuItems }) => {
                 <div key={index} className="info-sidebar__item">
                     <div
                         className="info-sidebar__title"
-                        onClick={() => toggleSection(index)}
+                        onClick={() => {toggleSection(index); item.onButtonClick()}}
                     >
                         {
                             item.subItems
