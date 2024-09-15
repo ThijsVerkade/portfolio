@@ -12,7 +12,6 @@
 }
 
 .navbar__title {
-    cursor: pointer;
     height: 100%;
     display: flex;
     justify-content: space-between;
@@ -42,9 +41,12 @@
     border-right: 1px solid #1E2D3D;
 }
 
-.navbar__item:hover, .navbar__contact:hover {
+.navbar__item:hover, .navbar__contact:hover, .navbar__item--active, .navbar__contact--active {
     border-bottom: 1px solid #FEA55F;
-    color: #FFFFFF;
+}
+
+.navbar__item:hover a, .navbar__contact:hover a, .navbar__item--active a, .navbar__contact--active a{
+    color: #ffffffff;
 }
 
 .navbar__contact {
