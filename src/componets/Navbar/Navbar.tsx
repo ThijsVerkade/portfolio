@@ -20,20 +20,21 @@ const Navbar: FC<NavbarProps> = ({ onLinkClick }) => {
             <div className="navbar__title">thijs-verkade</div>
             <ul className="navbar__list">
                 {navItems.slice(0, 3).map((item) => (
-                    <li key={item.path} className={`navbar__item ${location.pathname === item.path ? 'navbar__item--active' : ''}`}>
+                    <li key={item.path}
+                        onClick={() => onLinkClick(item.path)}
+                        className={`navbar__item ${location.pathname === item.path ? 'navbar__item--active' : ''}`}>
                         <a
                             className="navbar__link"
-                            onClick={() => onLinkClick(item.path)}
                         >
                             {item.label}
                         </a>
                     </li>
                 ))}
             </ul>
-            <div className={`navbar__contact ${location.pathname === '/contact' ? 'navbar__contact--active' : ''}`}>
+            <div className={`navbar__contact ${location.pathname === '/contact' ? 'navbar__contact--active' : ''}`}
+                 onClick={() => onLinkClick('/contact')}>
                 <a
                     className="navbar__link"
-                    onClick={() => onLinkClick('/contact')}
                 >
                     _contact-me
                 </a>

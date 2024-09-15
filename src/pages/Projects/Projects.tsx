@@ -3,15 +3,25 @@ import './Projects.css';
 import { Helmet } from 'react-helmet';
 import {
     RiReactjsFill,
-    RiHtml5Fill,
-    RiCss3Fill,
     RiVuejsFill,
-    RiAngularjsFill,
-    RiGatsbyFill,
-    RiFlutterFill, RiTerminalBoxFill, RiUser4Fill, RiGamepadFill,
+    RiCodeBlock,
+    RiMailFill,
+    RiPhoneFill,
+    RiPuzzle2Fill,
+    RiMailSendFill,
+    RiCloudFill,
+    RiCloudyFill, RiCloudyLine, RiSunCloudyFill, RiPencilFill,
 } from '@remixicon/react';
 // @ts-ignore
-import example from '../../assets/example.png';
+import AoCImage from '../../assets/projects/AoC.webp';
+// @ts-ignore
+import LaravelSqsProcessorImage from '../../assets/projects/laravel-sqs-processor.jpeg';
+// @ts-ignore
+import WeatherWebAppImage from '../../assets/projects/weather-web-app.jpeg';
+// @ts-ignore
+import DeveloperPortfolioImage from '../../assets/projects/developer-portfolio.jpeg';
+// @ts-ignore
+import ChessImage from '../../assets/projects/chess.jpeg';
 import InfoSidebar from "../../componets/InfoSidebar/InfoSidebar";
 import ProjectsSidebar from "../../componets/ProjectsSidebar/ProjectsSidebar";
 import TabBar from "../../componets/TabBar/TabBar";
@@ -24,28 +34,58 @@ export interface Project {
 }
 
 const projects: Project[] = [
-    { title: 'PROJECT 1', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', picture: example},
-    { title: 'PROJECT 2', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', picture: example },
-    { title: 'A bitt', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', picture: example },
-    { title: 'PROJECT 4', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', picture: example },
-    { title: 'PROJECT 4', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', picture: example },
-    { title: 'PROJECT 4', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', picture: example },
+    { title: 'Advent of Code Solver', description: 'This application automatically solves the daily puzzles from Advent of Code. It uses smart algorithms to quickly find the right answers, providing a fast and easy way to tackle each challenge. Perfect for anyone looking to simplify their Advent of Code experience!', picture: AoCImage},
+    { title: 'Laravel SQS Listener', description: 'This application listens to AWS SQS queues in real-time, seamlessly integrating with your Laravel app. It automatically processes messages and background jobs, ensuring smooth and efficient handling of asynchronous tasks. Perfect for improving performance and offloading heavy processing in your Laravel application!', picture: LaravelSqsProcessorImage },
+    { title: 'Weather web app', description: 'This web app provides weather updates. It features a clean interface, showing current conditions, forecasts, and more. Quickly check the weather anytime, anywhere with just a few clicks!', picture: WeatherWebAppImage },
+    { title: 'Portfolio', description: 'This portfolio showcases my skills, projects, and experiences in a clean and interactive way. Explore my work, learn about my background, and get in touch easily. It\'s the perfect way to see what I can do!', picture: DeveloperPortfolioImage },
+    { title: 'Chess backend', description: 'This backend application manages the logic for a chess game using event sourcing. Every move is recorded as an event, creating a complete history of the game that can be replayed, analyzed, or rolled back. It provides a robust and flexible way to track the game state, making it perfect for advanced chess analytics and real-time gameplay.', picture: ChessImage },
+    { title: 'Chess frontend', description: 'The frontend for the Chess Backend offers an interactive and intuitive interface for playing and analyzing games. It connects seamlessly to the backend, displaying real-time updates and game history. Designed for smooth gameplay, it brings the power of event-sourced data to the user in a simple, user-friendly way.\n', picture: ChessImage },
 ];
 
 const projectsItems = [
     { id: 'react', name: 'React', icon: <RiReactjsFill />, checked: true },
-    { id: 'html', name: 'HTML', icon: <RiHtml5Fill />, checked: false },
-    { id: 'css', name: 'CSS', icon: <RiCss3Fill />, checked: false },
     { id: 'vue', name: 'Vue', icon: <RiVuejsFill />, checked: true },
-    { id: 'angular', name: 'Angular', icon: <RiAngularjsFill />, checked: false },
-    { id: 'gatsby', name: 'Gatsby', icon: <RiGatsbyFill />, checked: false },
-    { id: 'flutter', name: 'Flutter', icon: <RiFlutterFill />, checked: false },
+    { id: 'php', name: 'PHP', icon: <RiCodeBlock />, checked: false },
 ];
+
+const projectsMenuItems = [
+    {
+        title: 'Advent of Code',
+        colorDir: '#607B96',
+        icon: <RiPuzzle2Fill/>
+    },
+    {
+        title: 'Laravel SQS Processor',
+        colorDir: '#607B96',
+        icon: <RiMailSendFill/>
+    },
+    {
+        title: 'Weather web app',
+        colorDir: '#607B96',
+        icon: <RiSunCloudyFill/>
+    },
+    {
+        title: 'Portfolio',
+        colorDir: '#607B96',
+        icon: <RiPencilFill/>
+    },
+    {
+        title: 'Chess backend',
+        colorDir: '#607B96',
+        icon: <RiPuzzle2Fill/>
+    },
+    {
+        title: 'Chess frontend',
+        colorDir: '#607B96',
+        icon: <RiPuzzle2Fill/>
+    },
+];
+
 
 const tabs = [
     {
         id: '1',
-        title: 'React; Vue',
+        title: 'Projects',
         onClick: () => console.log('Clicked projects'),
     },
 ];
@@ -73,7 +113,7 @@ const Projects: FC = () => {
                 </script>
             </Helmet>
             <div className="projects">
-                <ProjectsSidebar projects={projectsItems}/>
+                <InfoSidebar title="personal-info" menuItems={projectsMenuItems}/>
                 <section className="projects__content">
                     <TabBar tabs={tabs}/>
                     <div className="projects__list">

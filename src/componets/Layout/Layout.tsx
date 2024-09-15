@@ -22,47 +22,47 @@ const Layout: FC = () => {
         const targetIndex = pages.indexOf(path);
         if (targetIndex !== -1 && targetIndex !== currentPage) {
             setPendingPage(targetIndex);
-            setScrollDirection(targetIndex > currentPage ? 'down' : 'up'); // Determine direction based on target index
-            setShowContent(false); // Trigger exit animation
+            setScrollDirection(targetIndex > currentPage ? 'down' : 'up');
+            setShowContent(false);
         }
     };
 
     // Scroll handling
-    useEffect(() => {
-        const handleScroll = (event: WheelEvent) => {
-            if (pendingPage !== null) return;
-
-            if (event.deltaY > 0) {
-                // Scroll down
-                if (currentPage < pages.length - 1) {
-                    setPendingPage(currentPage + 1);
-                    setScrollDirection('down');
-                    setShowContent(false);
-                }
-            } else if (event.deltaY < 0) {
-                // Scroll up
-                if (currentPage > 0) {
-                    setPendingPage(currentPage - 1);
-                    setScrollDirection('up');
-                    setShowContent(false);
-                }
-            }
-        };
-
-        let scrollTimeout: ReturnType<typeof setTimeout> | null = null;
-        const handleDebouncedScroll = (event: WheelEvent) => {
-            if (scrollTimeout) {
-                clearTimeout(scrollTimeout);
-            }
-            scrollTimeout = setTimeout(() => handleScroll(event), 100);
-        };
-
-        window.addEventListener('wheel', handleDebouncedScroll);
-
-        return () => {
-            window.removeEventListener('wheel', handleDebouncedScroll);
-        };
-    }, [currentPage, pendingPage]);
+    // useEffect(() => {
+    //     const handleScroll = (event: WheelEvent) => {
+    //         if (pendingPage !== null) return;
+    //
+    //         if (event.deltaY > 0) {
+    //             // Scroll down
+    //             if (currentPage < pages.length - 1) {
+    //                 setPendingPage(currentPage + 1);
+    //                 setScrollDirection('down');
+    //                 setShowContent(false);
+    //             }
+    //         } else if (event.deltaY < 0) {
+    //             // Scroll up
+    //             if (currentPage > 0) {
+    //                 setPendingPage(currentPage - 1);
+    //                 setScrollDirection('up');
+    //                 setShowContent(false);
+    //             }
+    //         }
+    //     };
+    //
+    //     let scrollTimeout: ReturnType<typeof setTimeout> | null = null;
+    //     const handleDebouncedScroll = (event: WheelEvent) => {
+    //         if (scrollTimeout) {
+    //             clearTimeout(scrollTimeout);
+    //         }
+    //         scrollTimeout = setTimeout(() => handleScroll(event), 100);
+    //     };
+    //
+    //     window.addEventListener('wheel', handleDebouncedScroll);
+    //
+    //     return () => {
+    //         window.removeEventListener('wheel', handleDebouncedScroll);
+    //     };
+    // }, [currentPage, pendingPage]);
 
     // Handle pending page change
     useEffect(() => {
@@ -90,12 +90,12 @@ const Layout: FC = () => {
                             key={location.pathname}
                             initial={{
                                 opacity: 0,
-                                x: scrollDirection === 'down' ? 50 : -50, // Adjust entry direction based on scroll direction
+                                x: scrollDirection === 'down' ? 50 : -50,
                             }}
                             animate={{ opacity: 1, x: 0 }}
                             exit={{
                                 opacity: 0,
-                                x: scrollDirection === 'down' ? -50 : 50, // Adjust exit direction based on scroll direction
+                                x: scrollDirection === 'down' ? -50 : 50,
                             }}
                             transition={{ duration: animationDuration / 1000, ease: 'easeInOut' }}
                         >

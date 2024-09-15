@@ -11,6 +11,7 @@ import {
 import InfoSidebar from "../../componets/InfoSidebar/InfoSidebar";
 import VerticalSidebar from "../../componets/VerticalSidebar/VerticalSidebar";
 import TabBar from "../../componets/TabBar/TabBar";
+import CodeSnippet from "../../componets/CodeSnippet/CodeSnippet";
 
 const personalInfoMenuItems = [
     {
@@ -19,14 +20,14 @@ const personalInfoMenuItems = [
         subItems: ['Interests'],
     },
     {
-        title: 'interests',
-        colorDir: '#43D9AD',
-        subItems: ['High School', 'University'],
-    },
-    {
         title: 'education',
         colorDir: '#3A49A4',
         subItems: ['user@gmail.com', '+3598246359'],
+    },
+    {
+        title: 'interests',
+        colorDir: '#43D9AD',
+        subItems: ['High School', 'University'],
     },
 ];
 

@@ -2,7 +2,7 @@
     display: flex;
 
 }
-.sidebar-menu {
+.projects .info-sidebar {
     width: 388px;
     height: 91.8vh;
     border-right: 1px solid #1E2D3D;
@@ -16,9 +16,11 @@
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    justify-content: center;
+    justify-content: left;
     flex-direction: row;
     padding: 15px 20px;
+    max-height: 81.8vh;
+    overflow-y: auto;
 }
 .projects__list-item {
     flex: 1 1 30%;

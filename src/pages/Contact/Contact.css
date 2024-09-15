@@ -12,6 +12,25 @@
     width: 100%;
 }
 
+.contact__form-container {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+.contact__form-container .contact__form {
+    border-right: 1px solid #1E2D3D;
+}
+
+.contact__form-container .contact__form,
+.contact__form-container .code-snippet {
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+    width: 50%;
+    height: 80.5vh;
+}
+
 .contact__content .contact-form {
     margin: 10px 20px;
 }

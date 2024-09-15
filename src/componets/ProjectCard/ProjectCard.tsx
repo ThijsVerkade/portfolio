@@ -13,9 +13,9 @@ const ProjectCard: FC<ProjectCardProps> = ({ imageUrl, description, onButtonClic
         <div className="project-card">
             <div className="project-card__image-container">
                 <img src={imageUrl} alt="Project" className="project-card__image" />
-                <div className="project-card__icon">
-                    <RiReactjsFill />
-                </div>
+                {/*<div className="project-card__icon">*/}
+                {/*    <RiReactjsFill />*/}
+                {/*</div>*/}
             </div>
             <div className="project-card__content">
                 <p className="project-card__description">{description}</p>

@@ -1,12 +1,13 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import './Contact.css';
 import { Helmet } from 'react-helmet';
 // @ts-ignore
 import backgroundImage from '../../assets/background.svg';
 import InfoSidebar from "../../componets/InfoSidebar/InfoSidebar";
-import {RiLinkedinFill, RiMailFill, RiPhoneFill} from "@remixicon/react";
+import { RiLinkedinFill, RiMailFill, RiPhoneFill } from "@remixicon/react";
 import TabBar from "../../componets/TabBar/TabBar";
 import ContactForm from "../../componets/ContactForm/ContactForm";
+import CodeSnippet from '../../componets/CodeSnippet/CodeSnippet'; // Import CodeSnippet
 
 const contactInfoMenuItems = [
     {
@@ -20,6 +21,7 @@ const contactInfoMenuItems = [
         icon: <RiPhoneFill/>
     },
 ];
+
 const findMeInfoMenuItems = [
     {
         title: 'LinkedIn profile',
@@ -27,6 +29,7 @@ const findMeInfoMenuItems = [
         icon: <RiLinkedinFill/>
     },
 ];
+
 const tabs = [
     {
         id: '1',
@@ -36,6 +39,33 @@ const tabs = [
 ];
 
 const Contact: FC = () => {
+    const [formMessage, setFormMessage] = useState({
+        name: 'Jonathan Davis',
+        email: '',
+        message: '',
+        date: '',
+    });
+
+    // Handle form updates by passing this function to ContactForm
+    const updateFormMessage = (newMessage: any) => {
+        setFormMessage(newMessage);
+    };
+
+    const code = `
+const button = document.querySelector('#sendBtn');
+
+const message = {
+    name: "${formMessage.name}",
+    email: "${formMessage.email}",
+    message: "${formMessage.message}",
+    date: "${formMessage.date}"
+}
+
+button.addEventListener('click', () => {
+    form.send(message);
+})
+`;
+
     return (
         <>
             <Helmet>
@@ -50,7 +80,12 @@ const Contact: FC = () => {
                 </div>
                 <section className="contact__content">
                     <TabBar tabs={tabs}/>
-                    <ContactForm/>
+                    <div className="contact__form-container">
+                        <div className="contact__form">
+                            <ContactForm updateFormMessage={updateFormMessage} />
+                        </div>
+                        <CodeSnippet code={code} />
+                    </div>
                 </section>
             </div>
         </>
